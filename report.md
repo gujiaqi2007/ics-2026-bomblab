@@ -545,6 +545,17 @@ TOTAL 1948/1948 passed
 最初被我误读成 `0x405ba0`，正确值是 `0x405bb0`；只有 `challenge & 7 == 7` 且步数为 3 时
 才会走到那个结点，公开 seed 恰好没有暴露它。改成 `1` 之后全部通过。
 
+### 5.4 GitHub Actions 自测
+
+push 之后 `BombLab public tests` 工作流在提交 `29480c2` 上自动运行，7 个任务全部 success：
+
+```
+Phase 1 public tests   success     Phase 5 public tests   success
+Phase 2 public tests   success     Phase 6 public tests   success
+Phase 3 public tests   success     Honor public tests     success
+Phase 4 public tests   success
+```
+
 ## 6. 截图
 
 `images/01-run-all.png`：seed 42 一次运行六关并进入 Honor（`./defuser --seed 42` 与
